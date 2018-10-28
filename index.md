@@ -1,5 +1,13 @@
 # Progress Journal
 
+# Week-2 Assignment
+
+Week-2 ODD 2017 January Data Analysis
+
+Here is my Data Analysis 
+[Here is my Data Analysis](WEEK2ODD012017.html) <br>
+
+
 
 # Week-1 Assignment
 
