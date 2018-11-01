@@ -1,0 +1,81 @@
+---
+title: "ODD_Retail_Sales_201701"
+author: "Salih UÇAR"
+date: "1 Kasım 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Car Sales Data Import and Analyze
+
+
+In week-2 we studied with tidyverse package and some functions in this package. This homework is about it. After we downloaded data from ODD official website, we changed the name to ODD_Retail_Sales_201701.xlsx. We will make some example from raw data to final analysis below.
+
+##Download Raw Data
+
+Our raw excel file is in our repository. We can automatically download that file and put it in a temporary file. Then we can read that excel document into R and remove the temp file.
+
+```{r cars}
+# Download file from repository to the temp file
+# Remove the temp file
+tmp<-tempfile(fileext=".xlsx")
+download.file("https://github.com/MEF-BDA503/pj18-ucarsal/blob/master/week2/odd_retail_sales_2017_01.xlsx?raw=true",destfile=tmp,mode = 'wb')
+raw_data<-readxl::read_excel(tmp,skip=7,col_names=FALSE)
+file.remove(tmp)
+```
+
+```{r}
+head(raw_data)
+```
+
+It’s ok but needs some work.
+
+##Make Data Civilized
+
+In order to make the data standardized and workable we need to define column names and remove NA values for this example. Please use the same column names in your examples also.
+
+```{r}
+#Firstly we should specify the library to use.
+library(tidyverse)
+# Use the same column names in your data.
+colnames(raw_data) <- c("brand_name","auto_dom","auto_imp","auto_total","comm_dom","comm_imp","comm_total","total_dom","total_imp","total_total")
+# Now we replace NA values with 0 and label the time period with year and month, so when we merge the data we won't be confused.
+car_data_jan_17 <- raw_data %>% mutate_if(is.numeric,funs(ifelse(is.na(.),0,.))) %>% mutate(year=2017,month=1)
+
+print(car_data_jan_17,width=Inf)
+```
+
+##Save Your Civilized Data
+One of the best methods is to save your data to an RDS or RData file. The difference is RDS can hold only one object but RData can hold many. Since we have only one data frame here we will go with RDS.
+
+```{r}
+saveRDS(car_data_jan_17,file="odd_car_sales_data_jan_17.rds")
+# You can read that file by readRDS and assigning to an object
+```
+
+##Finish With Some Analysis
+
+I just have a look the percentage of commercial vehicle sales over total sales. And I ordered the dataframe according to total commercial sales brand by brand.
+
+```{r}
+# A new column is added named as perc_comm. That is the percentage of commercial sales to total sales.
+car_data_jan_17<-car_data_jan_17%>%mutate(perc_comm=(comm_total/total_total)*100)
+
+#How to select columns.
+car_data_jan_17%>%
+  filter(comm_total>0)%>%
+  select(year,month,brand_name,comm_total,total_total,perc_comm)%>%
+  arrange(desc(comm_total))
+
+```
+
+
+
+
+
+
+
+
