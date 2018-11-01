@@ -8,7 +8,7 @@ Data analysis via tidyverse.
 
 [Here is my Data Analysis](Odd_Retail_Sales_201701.html)<br>
 
-[My R data file for the term 2017 January is here :  ](Week2/odd_car_sales_data_jan_17.rds)<br>
+[My R data file for the term 2017 January is here](Week2/odd_car_sales_data_jan_17.rds)<br>
 
 
 
