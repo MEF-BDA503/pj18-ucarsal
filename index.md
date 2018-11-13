@@ -4,7 +4,6 @@
 
 Data analysis and visulisation group workout(Ömer BAYIR, Muharrem ÇAKIR) with tidyverse package on EGM dataset is [here](https://mef-bda503.github.io/pj18-omerbayir/week3/week3.html)<br>.
 
-
 # Week-2 Assignment
 
 Week-2 ODD 2017 January Data Analysis
