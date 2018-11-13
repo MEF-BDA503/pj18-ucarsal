@@ -2,7 +2,7 @@
 
 # Week-3 Assignment
 
-Data analysis and visulisation workout with tidyverse package is [here](https://mef-bda503.github.io/pj18-omerbayir/)<br>.
+Data analysis and visulisation workout with tidyverse package is [here](https://mef-bda503.github.io/pj18-omerbayir/week3/week3.html)<br>.
 
 
 # Week-2 Assignment
