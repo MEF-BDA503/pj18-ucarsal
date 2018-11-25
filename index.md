@@ -1,5 +1,12 @@
 # Progress Journal
 
+# Week-4 Assignment
+
+Data Analysis and Visulations on ODD dataset which includes the car sales. 
+
+[Here is my Data Analysis](week4/ODD_Data_Analysis.html)<br>
+
+
 # Week-3 Assignment
 
 Data analysis and visulisation group workout (Ömer BAYIR, Muharrem ÇAKIR) with tidyverse package on EGM dataset is [here](https://mef-bda503.github.io/pj18-omerbayir/week3/week3.html)<br>.
